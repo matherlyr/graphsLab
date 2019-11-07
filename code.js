@@ -1,4 +1,4 @@
-var penPromise= d3.json(src="penguins/classData.json")
+var penPromise= d3.json("classData.json")
 var success=function(data)
     {
         console.log(data);
@@ -12,7 +12,7 @@ var success=function(data)
                     })
         console.log(points)
         
-        var screen = {width:500, height:500}
+        var screen = {width:1000, height:1000}
         
         var setup= function(points)
             {
@@ -27,7 +27,7 @@ var success=function(data)
                 
                 var yScale=d3.scaleLinear()
                 yScale.domain([d3.min(points,function(p){return p.y}) , d3.max(points,function(p){return p.y})])
-                yScale.range ([screen.width, 0])
+                yScale.range ([screen.height, 0])
                 
                 drawPoints(points)
                 
