@@ -50,7 +50,7 @@ var success=function(data)
         
         d3.select("#button1").on("click", function()
                             {
-                                revmovePoints()
+                                removePoints()
                                 console.log("click")
                                 var points=getGradesByDay(0,data)
                                 console.log(points)
