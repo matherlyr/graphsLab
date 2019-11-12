@@ -50,25 +50,27 @@ var success=function(data)
         
         d3.select("#button1").on("click", function()
                             {
+                                revmovePoints()
                                 console.log("click")
                                 var points=getGradesByDay(0,data)
                                 console.log(points)
                                 setup(points)
                                 console.log("setup checkmark")
                                 drawPoints(points)
-                                console.log("drawing check mark")
+                                console.log("drawing checkmark")
                             
                             })
         
         d3.select("#button2").on("click", function()
                             {
+                                removePoints()
                                 console.log("click")
-                                var hey=getGradesByDay(1,data)
-                                console.log(hey)
-                                setup(hey)
+                                var points=getGradesByDay(1,data)
+                                console.log(points)
+                                setup(points)
                                 console.log("setup checkmark")
-                                drawPoints(hey)
-                                console.log("drawing check mark")
+                                drawPoints(points)
+                                console.log("drawing checkmark")
                             })
 
         
@@ -99,4 +101,9 @@ var getGradesByDay= function(day,data)
     }
 
 
-
+var removePoints =function()
+{
+    d3.selectAll("points *")
+    .remove()
+            
+}
